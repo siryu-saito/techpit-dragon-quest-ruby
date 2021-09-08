@@ -1,3 +1,4 @@
+# 勇者クラス
 class Brave
   attr_accessor :name, :hp, :offense, :defense
 
@@ -9,9 +10,22 @@ class Brave
   end
 end
 
+# モンスタークラス
+class Monster
+  attr_accessor :name, :hp, :offense, :defense
+
+  def initialize(**params)
+    @name = params[:name]
+    @hp = params[:hp]
+    @offense = params[:offense]
+    @defense = params[:defense]
+  end
+end
 brave = Brave.new(name: "テリー", hp: 500, offense: 150, defense: 100)
 brave2 = Brave.new(name: "セフィロス", hp: 1000, offense: 200, defense: 200)
 brave3 = Brave.new(name: "マリオ", hp: 700, offense: 50, defense: 100)
+
+monster = Monster.new(name: "スライム", hp: 250, offense: 200, defense: 100)
 
 
 puts "NAME: #{brave.name}"
